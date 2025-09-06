@@ -10,7 +10,7 @@ const { title = "Forside" } = Astro.props;
 ---
 
 <MainLayout title={title}>
-  <main class="BG_color mt-10 mx-5 md:mx-25">
+  <div class="BG_color mt-10 mx-5 md:mx-25">
     <section class="grid grid-cols-2 grid-rows-[60px_auto_auto]">
       <div class="w-auto h-15 Green_color row-start-1 col-start-1 ml-5 md:mx-5"></div>
       <div class="grid grid-cols-[1fr_1fr_1fr] col-start-1 row-start-2 vertical-text-container md:grid-cols-[1fr_1fr_1fr_5fr] ml-5">
@@ -40,7 +40,7 @@ const { title = "Forside" } = Astro.props;
         <div class="relative w-1 h-20 Black_color_bg right-1 -top-15 animate-pulse"></div>
         <div class="relative w-20 h-1 Black_color_bg right-1 -top-15 animate-pulse"></div>
         <!-- Pil ned -->
-        <div class="absolute bottom-0 -right-20 hidden md:block">
+        <div class="absolute bottom-0 -right-20 hidden animate-bounce md:block">
           <Text teksttype="pil" stylingclasses="Black_color ml-3 mb-3 vertical-text-upright">SCROLL</Text>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25 12 21m0 0-3.75-3.75M12 21V3"></path>
@@ -226,5 +226,5 @@ const { title = "Forside" } = Astro.props;
         </div>
       </div>
     </section>
-  </main>
+  </div>
 </MainLayout>
