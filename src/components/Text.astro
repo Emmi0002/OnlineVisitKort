@@ -1,0 +1,15 @@
+---
+const { teksttype = "brødtekst", stylingclasses = "" } = Astro.props;
+
+const sizeClasses = {
+  overskrift: "text-4xl font-bold",
+  overskrift2: "text-3xl font-italicbold",
+  brødtekst: "text-2xl font-italiclight",
+  pil: "text-base font-italiclight",
+  mobil_overskrift: "text-3xl font-bold",
+  mobil_overskrift2: "text-2xl font-italicbold",
+  mobil_brødtekst: "text-lg font-italiclight",
+};
+---
+
+<p class:list={[sizeClasses[teksttype], stylingclasses]}><slot /></p>

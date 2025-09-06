@@ -1,0 +1,20 @@
+---
+import Text from "./Text.astro";
+---
+
+<div class="Green_color p-15 md:grid grid-cols-2 mt-30">
+  <div>
+    <!-- Web -->
+    <Text teksttype="overskrift2" stylingclasses="text_white hidden md:block">Kontakt mig</Text>
+    <Text teksttype="brødtekst" stylingclasses="mt-5 text_white hidden md:block">+45 42 67 09 24</Text>
+    <Text teksttype="brødtekst" stylingclasses="mt-5 text_white hidden md:block">Emilieharder.mikkelsen@gmail.com</Text>
+    <!-- Mobil -->
+    <Text teksttype="mobil_overskrift2" stylingclasses="text_white md:hidden">Kontakt mig</Text>
+    <Text teksttype="mobil_brødtekst" stylingclasses="mt-5 text_white md:hidden">+45 42 67 09 24</Text>
+    <Text teksttype="mobil_brødtekst" stylingclasses="mt-5 text_white md:hidden">Emilieharder.mikkelsen@gmail.com</Text>
+  </div>
+  <!-- Web -->
+  <Text teksttype="brødtekst" stylingclasses="md:flex flex-col justify-end items-end md:text-right text_white hidden md:block">© 2025 Emilie Harder Mikkelsen</Text>
+  <!-- Mobil -->
+  <Text teksttype="mobil_brødtekst" stylingclasses="mt-10 md:flex flex-col justify-end items-end md:text-right text_white md:hidden">© 2025 Emilie Harder Mikkelsen</Text>
+</div>

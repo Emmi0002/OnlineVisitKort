@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+@plugin '@tailwindcss/typography';
+@plugin '@tailwindcss/forms';
+@import "tailwindcss-animated";
+@import "tailwindcss-intersect";
+
+@font-face {
+  font-family: "InriaSerif-Bold";
+  src: url("Fonts/InriaSerif-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "InriaSerif-Italic";
+  src: url("Fonts/InriaSerif-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "InriaSerif-LightItalic";
+  src: url("Fonts/InriaSerif-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "InriaSerif-BoldItalic";
+  src: url("Fonts/InriaSerif-BoldItalic.ttf") format("truetype");
+}
+
+@theme {
+  /* Her tilføjes theme variable // tokens */
+
+  /* Farver */
+  --Black: #0e0e0e;
+  --BG-color: #fffefe;
+  --Green: #24613b;
+  --White: #fffefe;
+
+  /* Typografi */
+  --font-bold: "InriaSerif-Bold", serif;
+  --font-light: "InriaSerif-Light", serif;
+  --font-italiclight: "InriaSerif-LightItalic", serif;
+  --font-italicbold: "InriaSerif-BoldItalic", serif;
+}
+
+/* Typografi */
+.font-bold {
+  font-family: var(--font-bold);
+}
+
+.font-light {
+  font-family: var(--font-light);
+}
+
+.font-italiclight {
+  font-family: var(--font-italiclight);
+}
+
+.font-italicbold {
+  font-family: var(--font-italicbold);
+}
+
+/* Farver */
+.Green_color {
+  background-color: var(--Green);
+}
+
+.border_Green {
+  border-color: var(--Green);
+}
+
+.BG_color {
+  background-color: var(--BG-color);
+}
+
+.text_white {
+  color: var(--White);
+}
+
+.group:hover a {
+  color: var(--White);
+}
+
+.Black_color {
+  color: var(--Black);
+}
+
+.Black_color_bg {
+  background-color: var(--Black);
+}
+
+ß section {
+  animation: fadeIn 2s linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%; /* styr hvornår animation sker */
+}
+
+.vertical-text {
+  writing-mode: vertical-lr;
+  writing-mode: sideways-rl;
+  transform: rotate(180deg);
+}
+
+.vertical-text-container {
+  justify-content: center; /* Centrerer horisontalt */
+  align-items: flex-start; /* Placerer øverst i cellen */
+  height: 100%; /* Fylder hele grid-cellen */
+}
+
+.vertical-text-upright {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+/* Animations */
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(10%);
+  }
+  80% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  display: inline-block;
+  transform: translateX(-100%); /* Starter ude til venstre */
+  opacity: 0;
+  animation: slide-in-left 1s ease-out forwards;
+}
+
+@keyframes bounce-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(10%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.slide-right-left {
+  display: inline-block;
+  animation: bounce-right 1s ease-in-out infinite;
+}
+
+/* Delays */
+.delay-0 {
+  animation-delay: 0s;
+}
+
+.delay-1 {
+  animation-delay: 0.6s; /* 200ms */
+}
+
+.delay-2 {
+  animation-delay: 0.8s; /* 400ms */
+}
+
+.delay-3 {
+  animation-delay: 1s; /* 600ms */
+}
+
+.delay-4 {
+  animation-delay: 2s; /* 800ms */
+}
+
+.delay-5 {
+  animation-delay: 3s; /* 1000ms */
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer components {
+}
+@layer utilities {
+}

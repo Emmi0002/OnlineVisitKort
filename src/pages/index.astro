@@ -1,0 +1,230 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import HeroBillede from "../assets/images/HeroBillede.jpeg";
+import Instagram from "../assets/images/Instagram.png";
+import Facebook from "../assets/images/Facebook.png";
+import LinkedIn from "../assets/images/LinkedIn.png";
+import Text from "../components/Text.astro";
+import { Image } from "astro:assets";
+const { title = "Forside" } = Astro.props;
+---
+
+<MainLayout title={title}>
+  <main class="BG_color mt-10 mx-5 md:mx-25">
+    <section class="grid grid-cols-2 grid-rows-[60px_auto_auto]">
+      <div class="w-auto h-15 Green_color row-start-1 col-start-1 ml-5 md:mx-5"></div>
+      <div class="grid grid-cols-[1fr_1fr_1fr] col-start-1 row-start-2 vertical-text-container md:grid-cols-[1fr_1fr_1fr_5fr] ml-5">
+        <!-- Hover effekt for KOMPETENCER -->
+        <div class="relative group w-10 md:w-20">
+          <div class="absolute left-0 w-full h-0 Green_color transition-all duration-500 z-0 group-hover:h-[240px] md:group-hover:h-[370px]"></div>
+          <a class="relative z-10 font-bold Black_color vertical-text mt-3 ml-3 transition-colors duration-500 group-hover:text_white text-3xl md:text-5xl" href="#kompetencer"> KOMPETENCER </a>
+        </div>
+        <!-- Hover effekt for OM MIG -->
+        <div class="relative group md:w-20">
+          <div class="absolute left-0 w-full h-0 Green_color transition-all duration-500 z-0 group-hover:h-[130px] md:group-hover:h-[200px]"></div>
+          <a class="relative z-10 font-bold Black_color vertical-text mt-3 ml-3 transition-colors duration-500 group-hover:text_white text-3xl md:text-5xl" href="#om_mig"> OM MIG </a>
+        </div>
+        <!-- Hover effekt for SOCIALS -->
+        <div class="relative group md:w-20">
+          <div class="absolute left-0 w-full h-0 Green_color transition-all duration-500 z-0 group-hover:h-[140px] md:group-hover:h-[220px]"></div>
+          <a class="relative z-10 font-bold Black_color vertical-text mt-3 ml-3 transition-colors duration-500 group-hover:text_white text-3xl md:text-5xl" href="#sociale_medier"> SOCIALS </a>
+        </div>
+      </div>
+      <!-- Billede på Hero sektion -->
+      <div class="w-full h-165 row-span-3 row-start-1 col-start-2 intersect:animate-fade-left intersect:animate-duration-[1500ms]">
+        <!-- Øverste ramme -->
+        <div class="relative w-1 h-20 Black_color_bg -top-5 left-full animate-pulse"></div>
+        <div class="relative w-20 h-1 Black_color_bg -top-25 left-[calc(100%-5rem)] animate-pulse"></div>
+        <Image class="px-5 w-full h-full object-cover object-bottom col-start-2 row-start-1 -mt-21" src={HeroBillede} alt="Billede af Emilie" />
+        <!-- Nederste ramme -->
+        <div class="relative w-1 h-20 Black_color_bg right-1 -top-15 animate-pulse"></div>
+        <div class="relative w-20 h-1 Black_color_bg right-1 -top-15 animate-pulse"></div>
+        <!-- Pil ned -->
+        <div class="absolute bottom-0 -right-20 animate-bounce hidden md:block">
+          <Text teksttype="pil" stylingclasses="Black_color ml-3 mb-3 vertical-text-upright">SCROLL</Text>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25 12 21m0 0-3.75-3.75M12 21V3"></path>
+          </svg>
+        </div>
+      </div>
+      <h1 class="font-bold Black_color text-6xl items-end row-start-3 mr-5 -mt-1 md:text-8xl text-right">
+        <span class="slide-in-left delay-1">EMILIE</span><br />
+        <span class="slide-in-left delay-2">HARDER</span><br />
+        <span class="slide-in-left delay-3">MIKKELSEN</span>
+      </h1>
+    </section>
+    <section id="om_mig" class="md:grid grid-cols-2 mt-25 md:mt-5">
+      <!-- Sociale Medier -->
+      <article class="md:grid grid-cols-[auto_3.75rem] grid-rows-3 col-start-2 items-center">
+        <div class="relative w-15 h-full Green_color row-span-3 col-start-2 hidden md:block"></div>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/emilie_harder_/" target="_blank" class="row-start-1 col-start-1 relative group grid grid-cols-[1fr_2fr] items-center overflow-hidden md:ml-30 p-5 z-10">
+          <div class="md:ml-80 flex items-center transition-width duration-500 group-hover:ml-0">
+            <Image class="w-20 h-20 justify-self-end mr-5 md:w-21 md:h-21" src={Instagram} alt="Instagram logo" />
+            <Text teksttype="overskrift" stylingclasses="justify-self-end text_white mr-10">INSTAGRAM</Text>
+          </div>
+          <div class="absolute Green_color w-full md:w-0 h-28 justify-self-end md:-mr-10 -z-10 transition-width md:duration-500 md:group-hover:w-120"></div>
+        </a>
+        <!-- Facebook -->
+        <a
+          href="https://www.facebook.com/emilieharder.mikkelsen/"
+          target="_blank"
+          class="row-start-2 col-start-1 relative group grid grid-cols-[1fr_2fr] items-center overflow-hidden md:ml-30 p-5 z-10"
+        >
+          <div class="md:ml-80 flex items-center transition-width duration-500 group-hover:ml-0">
+            <Image class="w-20 h-20 justify-self-end mr-5 md:w-21 md:h-21" src={Facebook} alt="Facebook logo" />
+            <Text teksttype="overskrift" stylingclasses="justify-self-end mr-10 text_white">FACEBOOK</Text>
+          </div>
+          <div class="absolute Green_color w-full md:w-0 h-28 justify-self-end md:-mr-10 -z-10 transition-width duration-500 group-hover:w-120"></div>
+        </a>
+        <!-- LinkedIn -->
+        <a
+          href="https://www.linkedin.com/in/emilie-harder-mikkelsen-170bb5244/"
+          target="_blank"
+          class="row-start-3 col-start-1 relative group grid grid-cols-[1fr_2fr] items-center overflow-hidden md:ml-30 p-5 z-10"
+        >
+          <div class="md:ml-80 flex items-center transition-width duration-500 group-hover:ml-0">
+            <Image class="w-20 h-20 justify-self-end mr-5 md:w-21 md:h-21" src={LinkedIn} alt="LinkedIn logo" />
+            <Text teksttype="overskrift" stylingclasses="justify-self-end mr-10 text_white">LINKEDIN</Text>
+          </div>
+          <div class="absolute Green_color w-full md:w-0 h-28 justify-self-end md:-mr-10 -z-10 transition-width duration-500 group-hover:w-120"></div>
+        </a>
+      </article>
+      <article class="col-start-1 row-start-1 intersect:animate-fade-down intersect:animate-duration-[5000ms] mt-20">
+        <Text teksttype="overskrift">Uddannelse</Text>
+        <div class="w-90 h-[2px] Black_color_bg mt-5"></div>
+        <!-- Overskrift om Multimediedesigner -->
+        <Text teksttype="overskrift2" stylingclasses="mt-5">Multimediedesigner</Text>
+        <Text teksttype="brødtekst" stylingclasses="mt-3">2024 - 2026</Text>
+        <Text teksttype="brødtekst" stylingclasses="mt-3">Erhvervsakademi København (Tidligere kendt som KEA)</Text>
+        <!-- Overskrift om Studentereksamen -->
+        <Text teksttype="overskrift2" stylingclasses="mt-10">Studentereksamen</Text>
+        <Text teksttype="brødtekst" stylingclasses="mt-3">2018 - 2021</Text>
+        <Text teksttype="brødtekst" stylingclasses="mt-3">Borupgaards Gymnasium</Text>
+      </article>
+    </section>
+    <section id="kompetencer" class="intersect:animate-fade-down intersect:animate-duration-[5000ms]">
+      <Text teksttype="overskrift" stylingclasses="mt-35 text-right">Kompetencer</Text>
+      <div class="w-90 h-[2px] Black_color_bg mt-5 ml-auto"></div>
+      <div class="md:grid grid-cols-3 gap-10 mt-10 text-right">
+        <!-- Figma -->
+        <div class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-3 items-end">
+          <!-- box -->
+          <div class="w-[40px] h-[120px] border-1 border_Green relative row-start-1 row-end-3 col-start-2">
+            <div class="w-full h-3/4 Green_color absolute bottom-0 right-0"></div>
+          </div>
+          <!-- Web -->
+          <Text teksttype="overskrift2" stylingclasses="hidden md:block">Figma</Text>
+          <Text teksttype="brødtekst" stylingclasses="hidden md:block">Udarbejdelse af prototyper og designsystemer</Text>
+          <!-- Mobil -->
+          <Text teksttype="mobil_overskrift2" stylingclasses="md:hidden">Figma</Text>
+          <Text teksttype="mobil_brødtekst" stylingclasses="md:hidden">Udarbejdelse af prototyper og designsystemer</Text>
+        </div>
+        <!-- Netlify -->
+        <div class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-3 items-end mt-8 md:mt-0">
+          <!-- box -->
+          <div class="w-[40px] h-[120px] border-1 border_Green relative row-start-1 row-end-3 col-start-2">
+            <div class="w-full h-3/4 Green_color absolute bottom-0 right-0"></div>
+          </div>
+          <!-- Web -->
+          <Text teksttype="overskrift2" stylingclasses="hidden md:block">Netlify</Text>
+          <Text teksttype="brødtekst" stylingclasses="hidden md:block">Hoste websites på internettet</Text>
+          <!-- Mobil -->
+          <Text teksttype="mobil_overskrift2" stylingclasses="md:hidden">Netlify</Text>
+          <Text teksttype="mobil_brødtekst" stylingclasses="md:hidden">Hoste websites på internettet</Text>
+        </div>
+        <!-- Canva -->
+        <div class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-3 items-end mt-8 md:mt-0">
+          <!-- box -->
+          <div class="w-[40px] h-[120px] border-1 border_Green relative row-start-1 row-end-3 col-start-2">
+            <div class="w-full h-1/3 Green_color absolute bottom-0 right-0"></div>
+          </div>
+          <!-- Web -->
+          <Text teksttype="overskrift2" stylingclasses="hidden md:block">Canva</Text>
+          <Text teksttype="brødtekst" stylingclasses="hidden md:block">Udarbejdelse af grafisk materiale</Text>
+          <!-- Mobil -->
+          <Text teksttype="mobil_overskrift2" stylingclasses="md:hidden">Canva</Text>
+          <Text teksttype="mobil_brødtekst" stylingclasses="md:hidden">Udarbejdelse af grafisk materiale</Text>
+        </div>
+        <!-- Astro, HTML, CSS, JavaScript -->
+        <div class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-3 items-end mt-8 md:mt-0">
+          <!-- box -->
+          <div class="w-[40px] h-[120px] border-1 border_Green relative row-start-1 row-end-3 col-start-2">
+            <div class="w-full h-2/3 Green_color absolute bottom-0 right-0"></div>
+          </div>
+          <!-- Web -->
+          <Text teksttype="overskrift2" stylingclasses="hidden md:block">Astro, HTML, CSS & JavaScript</Text>
+          <Text teksttype="brødtekst" stylingclasses="hidden md:block">Udvikling af websites</Text>
+          <!-- Mobil -->
+          <Text teksttype="mobil_overskrift2" stylingclasses="md:hidden">Astro, HTML, CSS & JavaScript</Text>
+          <Text teksttype="mobil_brødtekst" stylingclasses="md:hidden">Udvikling af websites</Text>
+        </div>
+        <!-- Adobe Illustrator -->
+        <div class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-3 items-end mt-8 md:mt-0">
+          <!-- box -->
+          <div class="w-[40px] h-[120px] border-1 border_Green relative row-start-1 row-end-3 col-start-2">
+            <div class="w-full h-3/4 Green_color absolute bottom-0 right-0"></div>
+          </div>
+          <!-- Web -->
+          <Text teksttype="overskrift2" stylingclasses="hidden md:block">Adobe Illustrator</Text>
+          <Text teksttype="brødtekst" stylingclasses="hidden md:block">Illustrationer og grafiske elementer</Text>
+          <!-- Mobil -->
+          <Text teksttype="mobil_overskrift2" stylingclasses="md:hidden">Adobe Illustrator</Text>
+          <Text teksttype="mobil_brødtekst" stylingclasses="md:hidden">Illustrationer og grafiske elementer</Text>
+        </div>
+        <!-- Adobe InDesign -->
+        <div class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-3 items-end mt-8 md:mt-0">
+          <!-- box -->
+          <div class="w-[40px] h-[120px] border-1 border_Green relative row-start-1 row-end-3 col-start-2">
+            <div class="w-full h-3/4 Green_color absolute bottom-0 right-0"></div>
+          </div>
+          <!-- Web -->
+          <Text teksttype="overskrift2" stylingclasses="hidden md:block">Adobe InDesign</Text>
+          <Text teksttype="brødtekst" stylingclasses="hidden md:block">Layout og design af tryksager</Text>
+          <!-- Mobil -->
+          <Text teksttype="mobil_overskrift2" stylingclasses="md:hidden">Adobe InDesign</Text>
+          <Text teksttype="mobil_brødtekst" stylingclasses="md:hidden">Layout og design af tryksager</Text>
+        </div>
+        <!-- Adobe Photoshop -->
+        <div class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-3 items-end mt-8 md:mt-0">
+          <!-- box -->
+          <div class="w-[40px] h-[120px] border-1 border_Green relative row-start-1 row-end-3 col-start-2">
+            <div class="w-full h-3/4 Green_color absolute bottom-0 right-0"></div>
+          </div>
+          <!-- Web -->
+          <Text teksttype="overskrift2" stylingclasses="hidden md:block">Adobe Photoshop</Text>
+          <Text teksttype="brødtekst" stylingclasses="hidden md:block">Billedredigering og manipulation</Text>
+          <!-- Mobil -->
+          <Text teksttype="mobil_overskrift2" stylingclasses="md:hidden">Adobe Photoshop</Text>
+          <Text teksttype="mobil_brødtekst" stylingclasses="md:hidden">Billedredigering og manipulation</Text>
+        </div>
+        <!-- Adobe After Effects -->
+        <div class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-3 items-end mt-8 md:mt-0">
+          <!-- box -->
+          <div class="w-[40px] h-[120px] border-1 border_Green relative row-start-1 row-end-3 col-start-2">
+            <div class="w-full h-3/4 Green_color absolute bottom-0 right-0"></div>
+          </div>
+          <!-- Web -->
+          <Text teksttype="overskrift2" stylingclasses="hidden md:block">Adobe After Effects</Text>
+          <Text teksttype="brødtekst" stylingclasses="hidden md:block">Animation og visuelle effekter</Text>
+          <!-- Mobil -->
+          <Text teksttype="mobil_overskrift2" stylingclasses="md:hidden">Adobe After Effects</Text>
+          <Text teksttype="mobil_brødtekst" stylingclasses="md:hidden">Animation og visuelle effekter</Text>
+        </div>
+        <!-- Adobe Premier Pro -->
+        <div class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-3 items-end mt-8 md:mt-0">
+          <!-- box -->
+          <div class="w-[40px] h-[120px] border-1 border_Green relative row-start-1 row-end-3 col-start-2">
+            <div class="w-full h-3/4 Green_color absolute bottom-0 right-0"></div>
+          </div>
+          <!-- Web -->
+          <Text teksttype="overskrift2" stylingclasses="hidden md:block">Adobe Premier Pro</Text>
+          <Text teksttype="brødtekst" stylingclasses="hidden md:block">Videoredigering og produktion</Text>
+          <!-- Mobil -->
+          <Text teksttype="mobil_overskrift2" stylingclasses="md:hidden">Adobe Premier Pro</Text>
+          <Text teksttype="mobil_brødtekst" stylingclasses="md:hidden">Videoredigering og produktion</Text>
+        </div>
+      </div>
+    </section>
+  </main>
+</MainLayout>
